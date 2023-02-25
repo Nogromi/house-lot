@@ -54,7 +54,7 @@ class Generator:
     def create_html(self):
         template_loader = jinja2.FileSystemLoader('./')
         template_env = jinja2.Environment(loader=template_loader)
-        template = template_env.get_template('basic-template.html')
+        template = template_env.get_template('template/basic-template.html')
         output_text = template.render(self.content)
         return output_text
 

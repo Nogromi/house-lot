@@ -1,13 +1,7 @@
-from typing import List
-from uuid import UUID, uuid4
-
 from fastapi import FastAPI, HTTPException, Form, Response
 from fastapi.responses import FileResponse
-
-from workshop.models.models import User, Gender, Role, UpdateUser
 from scrapping import Scrapper
 from pdf import Generator
-import os
 
 
 app = FastAPI()
@@ -15,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return FileResponse("public/index.html")
+    return FileResponse("template/index.html")
 
 @app.post("/postdata")
 def postdata(url=Form()):
